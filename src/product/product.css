@@ -1,0 +1,10 @@
+.product-card {
+    max-width: 14rem;
+    min-height: 380px;
+    display: block;
+    margin: auto;
+}
+
+.prod-img {
+    height: 12rem;
+}
