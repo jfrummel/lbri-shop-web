@@ -3,6 +3,7 @@ import lbriLogo from './/lbriLogo.jpg';
 import './App.css'
 import Product from '../product/product'
 import NavBar from '../navbar/navbar';
+import ShoppingCart from '../shoppingCart/shoppingCart';
 
 //Services
 import HttpService from '../services/http-service';
@@ -49,12 +50,19 @@ class App extends Component {
                 <header className="App-header pt-3">
                     <img src={lbriLogo} className="App-logo" alt="logo" />
                     <p>
-                        Lbri by SugarBoobs
+                        Lbri by Tammy
                     </p>
                 </header>
                 <div className="container-fluid App-main">
                     <div className='row pt-3 pb-4'>
-                        {this.productList()}
+                        <div className='col-sm-9'>
+                            <div className='row'>
+                                {this.productList()}
+                            </div>
+                        </div>
+                        <div className='col-sm-3'>
+                            <ShoppingCart/>
+                        </div>
                     </div>
                 </div>
             </div>

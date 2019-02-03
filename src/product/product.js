@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import './product.css';
+import DataService from '../services/data-service';
+
+
+let ds = new DataService();
 
 class Product extends Component {
+    constructor(props){
+        super(props);
 
+    // Binds
+    this.addToCart = this.addToCart.bind(this);
+    }
+
+    addToCart = () => {
+        ds.addShoppingCartItem(this.props.product);
+    }
 
 
     render() {
@@ -12,7 +25,7 @@ class Product extends Component {
                     <div className="card-body">
                         <h5 className="card-title">{this.props.product.title}</h5>
                         <p className="card-text">Price: {this.props.product.price}</p>
-                        <a href="#" className="btn btn-primary">Add to Cart</a>
+                        <a href="#" className="btn btn-primary" onClick={() => this.addToCart()}>Add to Cart</a>
                     </div>
             </div>
         );
